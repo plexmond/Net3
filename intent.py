@@ -1,3 +1,4 @@
+# python 3.5 !
 import requests
 import json
 
@@ -18,7 +19,7 @@ def create_intent(src_host, dst_host):
     if response.status_code == 200:
         print("Intent made")
     else:
-        print(f"Failed to make intent, http status code: {response.status_code}")
+        print("Failed to make intent, http status code: {}".format(response.status_code))
         print(response.text)
 
 def main():
