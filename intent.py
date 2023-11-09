@@ -1,7 +1,7 @@
 import requests
 import json
 
-ONOS_BASE_URL = "http://127.0.0.1:8181/onos/v1/"  # onos:port
+ONOS_BASE_URL = "http://172.17.0.5:8181/onos/v1/"  # onos:port
 ONOS_USERNAME = "onos"
 ONOS_PASSWORD = "rocks"
 
@@ -24,7 +24,7 @@ def create_intent(src_host, dst_host):
         auth=auth
     )
 
-    if response.status_code == 200:
+    if response.status_code == 201:
         print("Intent made")
     else:
         print(f"Failed to make intent, HTTP status code: {response.status_code}")
