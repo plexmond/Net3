@@ -9,6 +9,7 @@ def create_intent(src_host, dst_host):
     intent_data = {
         "type": "HostToHostIntent",
         "appId": "org.onosproject.cli",
+        "priority":'100',
         "one": src_host,
         "two": dst_host
     }
@@ -31,8 +32,8 @@ def create_intent(src_host, dst_host):
         print(response.text)
 
 def main():
-    src_host = "of:0000000000000001/1"  # source mac addr
-    dst_host = "of:0000000000000002/1"  # dest mac addr
+    src_host = "00:00:00:00:00:01/-1"  # source mac addr
+    dst_host = "00:00:00:00:00:08/-1"  # dest mac addr
 
     # request
     create_intent(src_host, dst_host)
